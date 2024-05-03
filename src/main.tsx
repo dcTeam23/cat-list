@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 //import { Toaster } from "./components/toaster";
 
 import { HomePage } from "./pages/home";
+import {Card} from "./components/ui/card"
 // import { SignInPage } from "./pages/signin";
 // import { SignUpPage } from "./pages/signup";
 // import { SignoutPage } from "./pages/signout";
@@ -17,6 +18,7 @@ import { HomePage } from "./pages/home";
 // import { CatOwnerEditGuard } from "./containers/cat-owner-edit-guard";
 
 import "./index.css";
+
 
 const router = createBrowserRouter([
   {
