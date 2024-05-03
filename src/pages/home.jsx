@@ -1,5 +1,5 @@
 import React from 'react';
-import {CatForm} from '../components/cat-form/cat-form'
+import { CatForm } from '../components/cat-form/cat-form'
 
 
 export const HomePage = () => {
