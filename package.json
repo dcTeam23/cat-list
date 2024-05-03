@@ -27,7 +27,6 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@app/types": "*",
     "@chromatic-com/storybook": "^1.3.3",
     "@storybook/addon-essentials": "^8.0.8",
     "@storybook/addon-interactions": "^8.0.8",
