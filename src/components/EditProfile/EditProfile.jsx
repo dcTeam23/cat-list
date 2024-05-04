@@ -16,7 +16,7 @@ export const EditProfile = () => {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  const handleInputChange = (setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
+  const handleInputChange = (/** @type {{ (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (arg0: string): void; }} */ setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
     setter(e.target.value);
   };
 
