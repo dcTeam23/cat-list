@@ -1,12 +1,10 @@
-import React from 'react';
-import { CatForm } from '../components/cat-form/cat-form'
-
+import { MyButton } from "@/components/MyButton/MyButton";
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="m-2" >
       <h1>Home Page</h1>
-      <CatForm></CatForm>
+      <MyButton />
     </div>
   );
 }
