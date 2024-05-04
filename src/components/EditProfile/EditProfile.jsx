@@ -1,55 +1,120 @@
-// @ts-nocheck
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { useState } from "react";
 
-export default function EditProfile() {
-    return (
+export const EditProfile = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
-        <div class="min-h-screen bg-gray-100 flex items-center justify-center">
-            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-                <h1 class="text-2xl font-bold text-gray-900 mb-6">Edit profile</h1>
-                <form>
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Name" />
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Email" />
-                    </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                        <div class="mt-1 relative">
-                            <input type="password" id="password" class="block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="••••••••" />
-                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.86 5 12 5m0 14c-4.14 0-8.268-2.943-9.542-7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="bg-lime-500 text-white px-4 py-2 rounded w-24 font-medium">Save</button>
-                    <h2 class="font-bold text-slate-500 mb-6 mt-6">Change Password</h2>
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Password" />
-                    </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-sm font-medium text-gray-700">New Password</label>
-                        <div class="mt-1 relative">
-                            <input type="password" id="password" class="block w-full rounded-md border-gray-300 shadow-sm pr-10" placeholder="••••••••" />
-                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.86 5 12 5m0 14c-4.14 0-8.268-2.943-9.542-7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="bg-lime-500 text-white px-4 py-2 rounded w-24 font-medium">Save</button>
-                </form>
-            </div>
+  const handleInputChange = (setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
+    setter(e.target.value);
+  };
+
+  const handleSubmitName = (/** @type {{ preventDefault: () => void; }} */ e) => {
+    e.preventDefault();
+    name && email ? console.log("Name and Email saved") : null;
+    setName("");
+    setEmail("");
+  };
+
+  const handleSubmitPassword = (/** @type {{ preventDefault: () => void; }} */ e) => {
+    e.preventDefault();
+    password && newPassword ? console.log("Password saved") : null;
+    setPassword("");
+    setNewPassword("");
+  };
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="m-2 bg-green-600 hover:bg-green-700">
+          Edit Profile
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle className="text-gray-600">Edit profile</DialogTitle>
+        </DialogHeader>
+        <div className="flex flex-col gap-4 py-4">
+          <div className="flex flex-col  items-start gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input
+              value={name}
+              onChange={handleInputChange(setName)}
+              type="text"
+              id="name"
+              placeholder="Digite seu nome"
+            />
+          </div>
+          <div className="flex flex-col  items-start gap-4">
+            <Label htmlFor="email" className="text-right">
+              Email
+            </Label>
+            <Input
+              value={email}
+              onChange={handleInputChange(setEmail)}
+              type="email"
+              id="email"
+              placeholder="seuemail@mail.com"
+              className="col-span-3"
+            />
+          </div>
+          <Button
+            onClick={handleSubmitName}
+            disabled={!name || !email ? true : false}
+            type="submit"
+            className="w-[20%] bg-green-600 hover:bg-green-700 "
+          >
+            Save
+          </Button>
+          <p className="mt-4 font-medium text-gray-600">Change Password</p>
+          <div className="flex flex-col  items-start gap-4">
+            <Label htmlFor="password" className="text-right">
+              Password
+            </Label>
+            <Input
+              onChange={handleInputChange(setPassword)}
+              value={password}
+              type="password"
+              id="password"
+              placeholder="*******"
+            />
+          </div>
+          <div className="flex flex-col items-start gap-4">
+            <Label htmlFor="new-password" className="text-right">
+              New Password
+            </Label>
+            <Input
+              onChange={handleInputChange(setNewPassword)}
+              value={newPassword}
+              type="password"
+              id="new-password"
+              placeholder="*******"
+              className="col-span-3"
+            />
+          </div>
+          <Button
+            onClick={handleSubmitPassword}
+            disabled={!password || !newPassword ? true : false}
+            type="submit"
+            className="w-[20%] bg-green-600 hover:bg-green-700 "
+          >
+            Save
+          </Button>
         </div>
-
-
-    )
-}
+      </DialogContent>
+    </Dialog>
+  );
+};

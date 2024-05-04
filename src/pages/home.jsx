@@ -1,6 +1,4 @@
-
-import EditProfile from '@/components/EditProfile/EditProfile';
-import React from 'react';
+import { EditProfile } from "@/components/EditProfile/EditProfile";
 
 export const HomePage = () => {
   return (
@@ -8,4 +6,4 @@ export const HomePage = () => {
       <EditProfile />
     </div>
   );
-}
+};
