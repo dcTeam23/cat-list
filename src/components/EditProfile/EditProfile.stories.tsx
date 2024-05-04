@@ -17,7 +17,3 @@ type Story = StoryObj<typeof EditProfile>;
 export const Primary: Story = {
   render: () => <EditProfile />,
 };
-
-export const WithLabel: Story = {
-  render: () => <EditProfile />,
-};
