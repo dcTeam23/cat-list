@@ -16,13 +16,13 @@ import {
         <Card>
         <CardHeader>
           <CardImagem></CardImagem>  
-          <CardTitle>Cat Name</CardTitle>
-          <CardDescription>Breed</CardDescription>
+          <CardTitle class="font-bold text-xl">Cat Name</CardTitle>
+          <CardDescription class="text-lg">Breed</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent class="px-6">
           <p>Age</p>
         </CardContent>
-        <CardFooter>
+        <CardFooter class="mt-6 ml-6 mb-4">
           <p>Description</p>
         </CardFooter>
         <CardButton>
