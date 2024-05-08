@@ -38,11 +38,12 @@ export function CatForm() {
 
   return <>
     <Dialog >
-      <DialogTrigger >Add a Cat</DialogTrigger>
-      <DialogContent className="bg-white flex justify-center ">
+      <DialogTrigger className="border rounded-xl p-2 bg-lime-600 font-semibold">Add a Cat</DialogTrigger>
+      <DialogContent className="bg-white">
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>
-          <div className="w-full gap-1.5 ease-out">
+        </DialogHeader>
+          <div className="w-full gap-1.5 ease-out flex flex-col">
             {avatar ? (
               <div>
                 <img src={avatar} alt="Avatar" className='h-40 rounded-full w-40 flex items-center' />
@@ -58,10 +59,10 @@ export function CatForm() {
             )}
 
             <Label>Name</Label>
-            <Input id="nome" type="text" className="w-max"></Input>
+            <Input id="nome" type="text" className="w-full"></Input>
             <Label>Breed</Label>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -70,7 +71,7 @@ export function CatForm() {
             </Select>
             <Label>Age</Label>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -78,10 +79,8 @@ export function CatForm() {
               </SelectContent>
             </Select>
             <Label>Description</Label>
-            <Textarea className="mt-1"></Textarea>
+            <Textarea className="w-full"></Textarea>
           </div>
-
-        </DialogHeader>
       </DialogContent>
     </Dialog>
   </>
