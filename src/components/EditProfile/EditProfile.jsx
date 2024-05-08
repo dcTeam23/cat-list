@@ -32,7 +32,13 @@ export const EditProfile = () => {
     password && newPassword ? console.log("Password saved") : null;
     setPassword("");
     setNewPassword("");
+    if (password === newPassword) {
+      alert('Senha alterada!');
+    } else {
+      alert('As senhas não são iguais. Por favor, tente novamente.');
+    }
   };
+  
 
   return (
     <Dialog>
