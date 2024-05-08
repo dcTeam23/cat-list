@@ -16,7 +16,7 @@ export const EditProfile = () => {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  const handleInputChange = (/** @type {{ (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (value: import("react").SetStateAction<string>): void; (arg0: string): void; }} */ setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
+  const handleInputChange = (/** @type {{ (value: import("react").SetStateAction<string>): void;}} */ setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
     setter(e.target.value);
   };
 
@@ -32,18 +32,12 @@ export const EditProfile = () => {
     password && newPassword ? console.log("Password saved") : null;
     setPassword("");
     setNewPassword("");
-    if (password === newPassword) {
-      alert('Senha alterada!');
-    } else {
-      alert('As senhas não são iguais. Por favor, tente novamente.');
-    }
   };
   
-
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="m-2 bg-green-600 hover:bg-green-700">
+        <Button className="bg-green-600 hover:bg-green-700">
           Edit Profile
         </Button>
       </DialogTrigger>
