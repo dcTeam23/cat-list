@@ -15,14 +15,14 @@ import {
         
         <Card>
         <CardHeader>
-          <CardImagem></CardImagem>  
+          <CardImagem ></CardImagem>  
           <CardTitle class="font-bold text-xl">Cat Name</CardTitle>
           <CardDescription class="text-lg">Breed</CardDescription>
         </CardHeader>
         <CardContent class="px-6">
           <p>Age</p>
         </CardContent>
-        <CardFooter class="mt-6 ml-6 mb-4">
+        <CardFooter>
           <p>Description</p>
         </CardFooter>
         <CardButton>
