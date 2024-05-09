@@ -19,5 +19,5 @@ export const Primary: Story = {
 };
 
 export const WithLabel: Story = {
-  render: () => <MenuProfile  label="outro texto aqui!" />,
+  render: () => <MenuProfile  />,
 };
