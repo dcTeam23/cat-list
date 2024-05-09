@@ -16,18 +16,28 @@ export const EditProfile = () => {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  const handleInputChange = (/** @type {{ (value: import("react").SetStateAction<string>): void;}} */ setter) => (/** @type {{ target: { value: string; }; }} */ e) => {
+  /**
+   * @param { { (value: import("react").SetStateAction<string>): void; }} setter
+   * @returns { (e: import("react").ChangeEvent<HTMLInputElement>) => void }
+   */
+  const handleInputChange = (setter) => (e) => {
     setter(e.target.value);
   };
 
-  const handleSubmitName = (/** @type {{ preventDefault: () => void; }} */ e) => {
+  /**
+   * @param {import("react").MouseEvent} e
+   */
+  const handleSubmitName = (e) => {
     e.preventDefault();
     name && email ? console.log("Name and Email saved") : null;
     setName("");
     setEmail("");
   };
 
-  const handleSubmitPassword = (/** @type {{ preventDefault: () => void; }} */ e) => {
+  /**
+   * @param {import("react").MouseEvent} e
+   */
+  const handleSubmitPassword = (e) => {
     e.preventDefault();
     password && newPassword ? console.log("Password saved") : null;
     setPassword("");
