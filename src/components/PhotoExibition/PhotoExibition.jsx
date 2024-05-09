@@ -10,7 +10,6 @@ export const PhotoExibition = () => {
             <ImageIcon className="text-gray-200"/>
         </label>
         <Button variant={"outline"} className="w-[75%] text-red-600"> <Trash2 className="mr-1" size={18}/> Remove photo</Button>
-
        </div> 
     )
 }
