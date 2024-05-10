@@ -17,3 +17,7 @@ type Story = StoryObj<typeof EditProfile>;
 export const Primary: Story = {
   render: () => <EditProfile />,
 };
+
+export const WithoutBackground: Story = {
+  render: () => <EditProfile withoutBackground={true} />,
+};
