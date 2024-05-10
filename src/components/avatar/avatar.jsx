@@ -11,19 +11,13 @@ import "./avatar.css"
 
 
 export function Avatar({ imgSrc, descricao, format }) {
-  if (format === "square") {
-    return (
-      <div className="container">
-        <img src={imgSrc} className="avatar square" alt={descricao} />
-      </div>
-    );
-  } else {
+  if (format == "circle") {
     return (
       <div className="container">
         <img src={imgSrc} className="avatar circle" alt={descricao} />
       </div>
     );
-  }
+  } 
 }
 
 // export const Avatar = ({ }) => {
