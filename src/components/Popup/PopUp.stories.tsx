@@ -4,6 +4,10 @@ import { PopUp } from './PopUp';
 
 const meta: Meta<typeof PopUp> = {
   component: PopUp,
+  argTypes: {
+    label: { description: "Nome do botão"},
+    
+  }
 };
 
 export default meta;
