@@ -1,11 +1,3 @@
-// Todo: Centralizar o input de imagem
-// Todo: Tirar a descrição "Escolha sua imagem" que está dentro do input de imagem
-// Todo: Adicionar o botão para remover a foto do gato e voltar para ao input de seleção de arquivo
-// Todo: Trocar os valores dos selects e adicionar outros caso tenha
-// Todo: Trocar os estilos da bordas dos inputs (Opicional)
-// Todo: Adicionar um loading na escolha da imagem (Opicional)
-
-
 import { useState } from "react"
 
 import {
@@ -26,7 +18,7 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button";
-import { ImageIcon } from "lucide-react"
+import { ImageIcon} from "lucide-react"
 
 
 
@@ -53,7 +45,7 @@ export function CatForm() {
 
   return <>
     <Dialog >
-      <DialogTrigger className="border rounded-xl p-2 bg-lime-600 font-semibold">Add a Cat</DialogTrigger>
+      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add a Cat</DialogTrigger>
       <DialogContent className="bg-white">
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>
