@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { EditProfile } from "../EditProfile/EditProfile";
 
 
 export const MenuProfile = () => {
@@ -19,10 +20,10 @@ export const MenuProfile = () => {
             <p className="text-gray-500">{email}</p>
         </div>
     </div>
-     
-    <div>
-        <Button variant={"ghost"} className="justify-start text-sm text-gray-700 w-full py-2 mt-2">Editar Perfil</Button>
+      <div>
+        <EditProfile withoutBackground={true} />
       </div>
+      
       <div>
         <Button variant={"ghost"} className="justify-start text-sm text-gray-700 w-full py-2 mt-2">Sign out</Button>
       </div>

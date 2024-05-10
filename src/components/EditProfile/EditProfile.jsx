@@ -10,7 +10,11 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { useState } from "react";
 
-export const EditProfile = () => {
+/**
+ * 
+ * @param {{withoutBackground?: boolean}} props - without background 
+ */
+export const EditProfile = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +51,7 @@ export const EditProfile = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-green-600 hover:bg-green-700">
+        <Button variant="ghost" className={props.withoutBackground ? "justify-start w-full text-gray-700": "bg-green-600 hover:bg-green-700"}>
           Edit Profile
         </Button>
       </DialogTrigger>
