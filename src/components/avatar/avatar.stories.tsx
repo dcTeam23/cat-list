@@ -2,18 +2,6 @@ import { StoryObj, Meta } from '@storybook/react';
 import { AvatarProps } from './avatar';
 import { Avatar } from './avatar'
 
-// interface MetaProps {
-//   render: StoryObj<AvatarProps>;
-//   argTypes: {
-//     imgSrc: { description: string };
-//     descricao: { description: string };
-//     format: {
-//       description: string;
-//       control: { type: string };
-//       options: string[];
-//     };
-//   };
-// }
 
 const meta: Meta<AvatarProps> = {
   component: Avatar,
@@ -32,8 +20,6 @@ const meta: Meta<AvatarProps> = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-// export default meta;
-// type Story = StoryObj;
 
 // More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
 export const Circle: Story = {
