@@ -4,11 +4,7 @@ import { PopUp } from './PopUp';
 
 const meta: Meta<typeof PopUp> = {
   component: PopUp,
-  argTypes: {
-    label: { description: "Nome do botão"},
-    
-  }
-};
+  };
 
 export default meta;
 type Story = StoryObj<typeof PopUp>;
@@ -23,5 +19,5 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
-  render: () => <PopUp  label="Nome do Botão" />,
+  render: () => <PopUp label='Nome do botão'/>,
 };
