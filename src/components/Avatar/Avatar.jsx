@@ -11,7 +11,7 @@
 
 
 export function Avatar({ imgSrc, descricao, format }) {
-  if (format === "square") {
+  if (format == "square") {
     return (
       <div className="container flex justify-center items-center">
         <img src={imgSrc} className={"avatar square w-32 h-32 border-3 border-white object-cover" + format} alt={descricao} />    
