@@ -5,7 +5,6 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
-  DialogTitle,
 } from "@/components/ui/dialog";
 
 export const PopUp = ({label= "Save"}, {texto= "Cat was updated"}) => {
