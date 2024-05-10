@@ -1,4 +1,4 @@
-import "./avatar.css"
+
 
 /**
  * @typedef {Object} AvatarProps
@@ -11,13 +11,19 @@ import "./avatar.css"
 
 
 export function Avatar({ imgSrc, descricao, format }) {
-  if (format == "circle") {
+  if (format === "square") {
     return (
-      <div className="container">
-        <img src={imgSrc} className="avatar circle" alt={descricao} />
-      </div>
+      <div className="container flex justify-center items-center">
+        <img src={imgSrc} className={"avatar square w-32 h-32 border-3 border-white object-cover" + format} alt={descricao} />    
+          </div>
     );
-  } 
+  }  if (format === "circle") {
+    return (
+      <div className="container flex justify-center items-center">
+    <img src={imgSrc} className={"avatar circle w-32 h-32 rounded-full object-cover" + format} alt={descricao} />
+    </div>
+    );
+  }
 }
 
 // export const Avatar = ({ }) => {
