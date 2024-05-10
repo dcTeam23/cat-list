@@ -11,7 +11,7 @@ const meta: Meta<AvatarProps> = {
     format: {
       description: 'Formato do Avatar',
       control: { type: 'radio' },
-      options: ['circle', 'square'],
+      options: ['circle'],
     },
   },
   render: (args: AvatarProps) => <Avatar {...args} />,
