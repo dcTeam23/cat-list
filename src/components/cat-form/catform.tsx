@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button";
+import { toBeDisabled } from "@testing-library/jest-dom/matchers"
 
 
 export function CatForm() {
@@ -40,10 +41,14 @@ export function CatForm() {
     }
   };
 
+  
   const removeAvatar = () => {
     setAvatar(null); 
   };
 
+    const removeSave = (): boolean => {
+        return avatar === null;
+    };
 
   return <>
     <Dialog >
@@ -95,11 +100,9 @@ export function CatForm() {
           </Select>
           <Label className="self-start">Description</Label>
           <Textarea className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm focus:border-2"></Textarea>
-          <Button></Button>
+          <Button disabled={removeSave()}  className=" rounded-[5px] bg-green-700 text-white self-start mt-3 hover:bg-green-600">Save</Button>
         </div>
       </DialogContent>
     </Dialog>
   </>
-
-
-}
+  }
