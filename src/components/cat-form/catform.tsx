@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button";
-import { toBeDisabled } from "@testing-library/jest-dom/matchers"
+
 
 
 export function CatForm() {
@@ -47,6 +47,7 @@ export function CatForm() {
   };
 
     const removeSave = (): boolean => {
+
         return avatar === null;
     };
 
@@ -57,11 +58,10 @@ export function CatForm() {
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>
         </DialogHeader>
-        <div className="w-full gap-1.5 ease-out flex flex-col items-center">
+        <div className="w-full gap-1.5 ease-out flex flex-col items-center  ">
           {avatar ? (
             <div>
-              <img src={avatar} alt="Avatar" className='h-40 rounded-full w-40 flex items-center' />
-              <button onClick={removeAvatar}>Remover Avatar</button>
+              <img src={avatar} alt="Avatar" className='h-40 rounded-full w-40 flex items-center object-cover' />
             </div>
           ) : (
             <div className="border h-40 w-40 rounded-full border-black overflow-hidden">
@@ -75,12 +75,13 @@ export function CatForm() {
               />
             </div>
           )}
+          <button onClick={removeAvatar} disabled={removeSave()}  className=" hover:bg-red-50 flex items-center border rounded-md mt-4 px-7 py-1 text-red-600 hover:bg-red disabled:opacity-70 ">Remover Avatar</button>
 
           <Label className="self-start">Name</Label>
-          <Input id="nome" type="text" className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm focus:border-2" required></Input>
+          <Input id="nome" type="text" className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm " required></Input>
           <Label className="self-start">Breed</Label>
           <Select required>
-            <SelectTrigger className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm focus:border-2">
+            <SelectTrigger className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm ">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -89,7 +90,7 @@ export function CatForm() {
           </Select>
           <Label className="self-start">Age</Label>
           <Select>
-            <SelectTrigger className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm focus:border-2">
+            <SelectTrigger className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm ">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -99,7 +100,7 @@ export function CatForm() {
             </SelectContent>
           </Select>
           <Label className="self-start">Description</Label>
-          <Textarea className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm focus:border-2"></Textarea>
+          <Textarea className="w-full border rounded border-gray-300 focus:border-[#3770BD] focus:shadow-sm  "></Textarea>
           <Button disabled={removeSave()}  className=" rounded-[5px] bg-green-700 text-white self-start mt-3 hover:bg-green-600">Save</Button>
         </div>
       </DialogContent>
