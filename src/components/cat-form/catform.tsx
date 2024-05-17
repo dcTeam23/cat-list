@@ -23,25 +23,15 @@ import { ImageIcon } from "lucide-react"
 export interface transformProps {
   add: boolean
 }
-
-
-
-export function CatForm(add: transformProps) {
-  const transform = (add: boolean | transformProps) => {
-    switch (add) {
-      case add === true:
-        return `+ Add a Cat`
-        break
-      case add === false:
-        return "Edit"
-        break
-      default:
-        return "Add a Cat"
-        break
-    }
+const transform = (add: boolean | transformProps) => {
+  if (add == true) {
+    return "Edit Cat"
   }
-
-
+  else {
+    return `+ Add a Cat`
+  }
+}
+export function CatForm(props: transformProps) {
   const [avatar, setAvatar] = useState<string | null>(null);
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,7 +55,7 @@ export function CatForm(add: transformProps) {
 
   return <>
     <Dialog >
-      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(add)}</DialogTrigger>
+      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(props.add)}</DialogTrigger>
       <DialogContent className="bg-white">
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>

@@ -14,6 +14,8 @@ const meta: Meta<transformProps> = {
 export default meta;
 type Story = StoryObj<typeof CatForm>;
 
+
+
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
  * See https://storybook.js.org/docs/api/csf
@@ -21,4 +23,8 @@ type Story = StoryObj<typeof CatForm>;
  */
 export const Primary: Story = {
   render: (args) => <CatForm add={args.add}/>,
+};
+
+export const Secundary: Story = {
+  render: () => <CatForm add={false}/>,
 };
