@@ -58,7 +58,7 @@ export function CatForm(props: transformProps) {
       <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(props.add)}</DialogTrigger>
       <DialogContent className="bg-white">
         <DialogHeader>
-          <DialogTitle className="w-full font-bold">Add cat</DialogTitle>
+          <DialogTitle className="w-full font-bold">{transform(props.add)}</DialogTitle>
         </DialogHeader>
         <div className="w-full gap-1.5 ease-out flex flex-col items-center">
           {avatar ? (
