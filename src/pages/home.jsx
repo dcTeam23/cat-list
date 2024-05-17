@@ -1,10 +1,10 @@
-import { MyButton } from "@/components/MyButton/MyButton";
+import { Header } from "@/components/Header/Header";
 
 export const HomePage = () => {
   return (
     <div className="m-2" >
       <h1>Home Page</h1>
-      <MyButton />
+      <Header />
     </div>
   );
 }
