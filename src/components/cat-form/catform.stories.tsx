@@ -8,6 +8,7 @@ const meta: Meta<transformProps> = {
     add: {description: "Edit or Add",
     control: "boolean"}
   },
+  render: (args: transformProps) => <CatForm {...args} />,
 }
 
 export default meta;
@@ -19,5 +20,5 @@ type Story = StoryObj<typeof CatForm>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <CatForm add={false}/>,
+  render: (args) => <CatForm add={args.add}/>,
 };

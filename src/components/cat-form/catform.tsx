@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button";
-import { ImageIcon} from "lucide-react"
+import { ImageIcon } from "lucide-react"
 
 export interface transformProps {
   add: boolean
@@ -26,13 +26,13 @@ export interface transformProps {
 
 
 
-export function CatForm(add:transformProps)  {
-  function transform(add) {
-    switch(true){
-      case add == true:
+export function CatForm(add: transformProps) {
+  const transform = (add: boolean | transformProps) => {
+    switch (add) {
+      case add === true:
         return `+ Add a Cat`
         break
-      case add == false:
+      case add === false:
         return "Edit"
         break
       default:
@@ -40,6 +40,7 @@ export function CatForm(add:transformProps)  {
         break
     }
   }
+
 
   const [avatar, setAvatar] = useState<string | null>(null);
 
@@ -60,11 +61,11 @@ export function CatForm(add:transformProps)  {
   const disableButton = (): boolean => {
     return avatar === null;
   };
-  
+
 
   return <>
     <Dialog >
-      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(true)}</DialogTrigger>
+      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(add)}</DialogTrigger>
       <DialogContent className="bg-white">
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>
