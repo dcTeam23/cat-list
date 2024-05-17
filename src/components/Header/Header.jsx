@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
 import Logo from "@/assets/website/logo.png";
 import { MenuProfile } from "../MenuProfile/MenuProfile";
-import DarkMode from "../ui/darkMode";
+import DarkMode from "./DarkMode";
 
 export const Header = () => {
   const [showPopup, setShowPopup] = useState(false);

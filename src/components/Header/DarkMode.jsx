@@ -1,5 +1,4 @@
 import React from "react";
-import { DarkMode } from "../ui/darkMode";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
 export const DarkMode = () => {
