@@ -17,7 +17,7 @@ export function Avatar({ imgSrc, descricao, format }) {
        <img
          src={imgSrc}
          className={`avatar ${format === 'square' ? 'square' : 'rounded-full'} w-32 h-32 border-3 border-white object-cover`}
-         alt={descricao}.
+         alt={descricao}
        />
      </div>
    );
