@@ -1,23 +1,28 @@
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/use-toast"
+import { Toaster } from "@/components/ui/toaster"
 import { CheckCircledIcon } from '@radix-ui/react-icons';
 
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+export const PopUpWithToaster = () => { 
+  return <> 
+  <PopUp /> 
+  <Toaster/> 
+  </> 
+}
 
+export function PopUp() {
+  const { toast } = useToast()
 
-export const PopUp = ({label= "Save"}, {texto= "Cat was updated"}) => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button className="bg-green-600 hover:bg-green-700" variant={"default"}>{label}</Button>
-      </DialogTrigger>
-      <DialogContent className="flex items-center">
-        <CheckCircledIcon className="text-green-600" width="32" height="32"/>
-        <span className="text-black">{texto}</span>    
-      </DialogContent>
-    </Dialog>
-  );
-};
+    <Button
+      variant="outline"
+      onClick={() => {
+        toast({
+          description: "Cat was updated",
+        })
+      }}
+    >
+    Save
+    </Button>
+  )
+}

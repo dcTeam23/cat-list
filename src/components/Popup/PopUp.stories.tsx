@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { PopUp } from './PopUp';
+import { PopUp, PopUpWithToaster } from './PopUp';
 
 const meta: Meta<typeof PopUp> = {
   component: PopUp,
@@ -15,9 +14,9 @@ type Story = StoryObj<typeof PopUp>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <PopUp />,
+  render: () => <PopUpWithToaster />,
 };
 
 export const Secondary: Story = {
-  render: () => <PopUp label='Nome do botão'/>,
+  render: () => <PopUpWithToaster />,
 };
