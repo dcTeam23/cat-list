@@ -1,4 +1,5 @@
 import { MyButton } from "@/components/MyButton/MyButton";
+
 export const HomePage = () => {
   return (
     <div className="m-2" >
