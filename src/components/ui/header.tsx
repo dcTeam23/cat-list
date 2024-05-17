@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Logo from "../../assets/logo.png";
-import MenuProfile from "../../assets/menuProfile.png";
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
+import Logo from "../../assets/logo.png";
+import MenuProfile from "../../assets/menuProfile.png";
 import DarkMode from "../../components/Header/DarkMode";
 
 const Header = () => {

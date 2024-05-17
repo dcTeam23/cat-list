@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import Logo from "../../assets/logo.png";
-import MenuProfile from "../../assets/menuProfile.png";
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
-import DarkMode from "../../components/Header/DarkMode";
-import { Header } from "../ui/header";
+import Logo from "@/assets/website/logo.png";
+import { MenuProfile } from "../MenuProfile/MenuProfile";
+import DarkMode from "../ui/darkMode";
 
 export const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -51,8 +50,8 @@ export const Header = () => {
               </div>
               {showPopup && (
                 <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 border border-gray-300 z-50 shadow-md dark:bg-secondary/20 dark:text-white duration-200">
-                  <img src={MenuProfile} alt="MenuProfile" />
-                  <button
+                  <MenuProfile />
+                                    <button
                     onClick={() => setShowPopup(false)}
                     className="shadow-md dark:bg-secondary/20 dark:text-white duration-100"
                   >
@@ -68,7 +67,7 @@ export const Header = () => {
 
               {/* Darkmode Switch */}
               <div className="absolute right-0 top-0 flex items-center gap-4">
-                <DarkMode theme={theme} setTheme={setTheme} />
+                <DarkMode />
               </div>
             </div>
           </div>
