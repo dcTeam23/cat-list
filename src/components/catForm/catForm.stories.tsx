@@ -24,7 +24,3 @@ type Story = StoryObj<typeof CatForm>;
 export const Primary: Story = {
   render: (args) => <CatForm add={args.add}/>,
 };
-
-export const Secundary: Story = {
-  render: () => <CatForm add={false}/>,
-};
