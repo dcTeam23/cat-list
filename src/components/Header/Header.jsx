@@ -7,7 +7,6 @@ import DarkMode from "./DarkMode";
 
 export const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
-  /*const [theme, setTheme] = useState("light");*/
 
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
