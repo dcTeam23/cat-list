@@ -43,6 +43,6 @@ export const Square: Story = {
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: (args) => <Avatar imgSrc={'https://avatars.githubusercontent.com/u/133207241?v=4'} descricao={''} format={args.format}  />,
+  render: (args) => <Avatar imgSrc={'https://avatars.githubusercontent.com/u/133207241?v=4'} descricao={''} format={args.format}/>,
 };
 
