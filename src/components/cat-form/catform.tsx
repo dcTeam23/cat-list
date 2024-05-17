@@ -20,9 +20,27 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button";
 import { ImageIcon} from "lucide-react"
 
+export interface transformProps {
+  add: boolean
+}
 
 
-export function CatForm() {
+
+export function CatForm(add:transformProps)  {
+  function transform(add) {
+    switch(true){
+      case add == true:
+        return `+ Add a Cat`
+        break
+      case add == false:
+        return "Edit"
+        break
+      default:
+        return "Add a Cat"
+        break
+    }
+  }
+
   const [avatar, setAvatar] = useState<string | null>(null);
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,10 +60,11 @@ export function CatForm() {
   const disableButton = (): boolean => {
     return avatar === null;
   };
+  
 
   return <>
     <Dialog >
-      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add a Cat</DialogTrigger>
+      <DialogTrigger className="border rounded-md p-2 bg-[#17803d] font-semibold text-white flex">{transform(true)}</DialogTrigger>
       <DialogContent className="bg-white">
         <DialogHeader>
           <DialogTitle className="w-full font-bold">Add cat</DialogTitle>

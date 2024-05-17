@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CatForm } from './catform.tsx';
+import { CatForm, transformProps } from './catform.tsx';
 
-const meta: Meta<typeof CatForm> = {
+const meta: Meta<transformProps> = {
   component: CatForm,
-};
+  argTypes: {
+    add: {description: "Edit or Add",
+    control: "boolean"}
+  },
+}
 
 export default meta;
 type Story = StoryObj<typeof CatForm>;
@@ -15,5 +19,5 @@ type Story = StoryObj<typeof CatForm>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <CatForm/>,
+  render: () => <CatForm add={false}/>,
 };
