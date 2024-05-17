@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CatForm, transformProps } from './catform.tsx';
+import { CatForm, transformProps } from './catForm.tsx';
 
 const meta: Meta<transformProps> = {
   component: CatForm,
