@@ -14,7 +14,7 @@ import { CheckCircledIcon } from '@radix-ui/react-icons';
  */
 export const ToastContent = ({ mensagem }) => (
   <div className="flex items-center">
-    <CheckCircledIcon className="mr-2 text-green-500" />
+    <CheckCircledIcon className="mr-2 text-green-500" width="24" height="24" />
     <span>{mensagem}</span>
   </div>
 );
