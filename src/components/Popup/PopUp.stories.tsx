@@ -1,22 +1,31 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PopUp, PopUpWithToaster } from './PopUp';
 
+
 const meta: Meta<typeof PopUp> = {
+  title: 'Components/PopUp', // Define um título para o grupo de stories
   component: PopUp,
-  };
+  argTypes: {
+    buttonText: { control: 'text' },
+    mensagem: { control: 'text' },
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof PopUp>;
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/api/csf
- * to learn how to use render functions.
- */
+// Stories
 export const Primary: Story = {
   render: () => <PopUpWithToaster />,
-};
+}; // Usa os valores padrão das props
 
 export const Secondary: Story = {
-  render: () => <PopUpWithToaster />,
+  args: {
+    buttonText: "Atualizar",
+    mensagem: "As informações do gato foram atualizadas com sucesso!",
+  },
+  render: ( {buttonText, mensagem}) =>  <PopUpWithToaster 
+  buttonText={ buttonText } 
+  mensagem={ mensagem } 
+/>,
 };
