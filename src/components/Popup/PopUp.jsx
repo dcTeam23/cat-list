@@ -3,15 +3,33 @@ import { useToast } from "@/components/ui/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { CheckCircledIcon } from '@radix-ui/react-icons';
 
-// Componente para o conteúdo do Toast
-const ToastContent = ({ mensagem }) => (
+/**
+ * @typedef {Object} ToastContentProps
+ * @property {string} mensagem - A mensagem a ser exibida no toast.
+ */
+
+/**
+ * Componente para o conteúdo do Toast
+ * @param {ToastContentProps} props 
+ */
+export const ToastContent = ({ mensagem }) => (
   <div className="flex items-center">
     <CheckCircledIcon className="mr-2 text-green-500" />
     <span>{mensagem}</span>
   </div>
 );
 
-// Componente PopUp (recebe buttonText e message como props)
+/**
+ * @typedef {Object} PopUpProps
+ * @property {string} [buttonText="Save"] - O texto do botão.
+ * @property {string} [mensagem="Cat was updated"] - A mensagem do toast.
+ */
+
+/**
+ * Componente PopUp
+ * @param {PopUpProps} props 
+ */
+
 export function PopUp({ buttonText = "Save", mensagem = "Cat was updated" }) {
   const { toast } = useToast();
 
